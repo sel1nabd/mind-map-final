@@ -1,7 +1,7 @@
 {
-  "name": "interactive-brain-viewer",
+  "name": "mind-map",
   "version": "1.0.0",
-  "description": "Interactive 3D Brain Simulator with clickable regions",
+  "description": "Mind Map - Interactive 3D Brain Explorer with educational resources",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

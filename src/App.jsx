@@ -214,7 +214,7 @@ function App() {
       {/* Breadcrumb Navigation */}
       <div className="breadcrumb-nav">
         <div className="breadcrumb-content">
-          <h1 className="app-title">Brain Explorer</h1>
+          <h1 className="app-title">Mind Map</h1>
           {selectedRegion && (
             <div className="breadcrumb-path">
               <button
@@ -510,7 +510,7 @@ function App() {
                 </>
               ) : (
                 <>
-                  <h3 className="info-welcome-title">Welcome to Brain Explorer</h3>
+                  <h3 className="info-welcome-title">Welcome to Mind Map</h3>
                   <p className="info-welcome-text">
                     Explore the brain's 6 main regions and their constituent parts. Click on any region to begin your journey.
                   </p>
