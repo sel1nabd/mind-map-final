@@ -1,4 +1,5 @@
 # Interactive 3D Brain Viewer
+AI slop readme aah, took like 3 hours to add that brain, still ongoing project.
 
 An interactive 3D brain simulator that allows users to click on brain regions to learn about their functions.
 
