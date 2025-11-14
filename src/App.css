@@ -113,8 +113,8 @@ body {
   right: 0;
   z-index: 100;
   padding: var(--spacing-lg) var(--spacing-xl);
-  background: linear-gradient(180deg, rgba(26, 26, 46, 0.6) 0%, rgba(26, 26, 46, 0) 100%);
-  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(12px);
 }
 
 .breadcrumb-content {
@@ -128,7 +128,7 @@ body {
 .app-title {
   font-size: 20px;
   font-weight: var(--font-weight-semibold);
-  color: var(--color-bg-primary);
+  color: #ffffff;
   letter-spacing: -0.5px;
   white-space: nowrap;
 }
