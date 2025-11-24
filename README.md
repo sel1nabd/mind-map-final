@@ -1,23 +1,23 @@
 # MindMap - Interactive 3D Brain Viewer
 
-An interactive 3D viewer for exploring the seven Yeo et al. (2011) functional brain networks. Hover or click a network to read accurate summaries, functions, and resources.
+An interactive 3D viewer for exploring seven large-scale functional brain networks. Hover or click a network to read accurate summaries, functions, and resources.
 
 ## Atlas
 
-This project uses the 7-Network functional atlas from Yeo et al. (2011), derived from resting-state fMRI on 1,000 subjects to estimate intrinsic functional connectivity across the cortex. The 7 networks (VIS, SMN, DAN, VAN/Salience, Limbic, Frontoparietal/Control, Default Mode) offer a widely adopted, biologically meaningful yet concise framework for interactive exploration and education.
+This project uses the 7-network functional atlas published by Yeo et al. (2011), derived from resting-state fMRI data from 1,000 individuals. The seven networks (Visual, Somatomotor, Dorsal Attention, Ventral Attention/Salience, Limbic, Frontoparietal Control, Default Mode) give a concise yet biologically grounded framework for learning and storytelling.
 
-Citation: Yeo, B.T.T., Krienen, F.M., Sepulcre, J., Sabuncu, M.R., Lashkari, D., Hollinshead, M., … Buckner, R.L. (2011). The organization of the human cerebral cortex estimated by intrinsic functional connectivity. Journal of Neurophysiology, 106(3), 1125–1165. https://doi.org/10.1152/jn.00338.2011
+Citation: Yeo, B.T.T., Krienen, F.M., Sepulcre, J., Sabuncu, M.R., Lashkari, D., Hollinshead, M., … Buckner, R.L. (2011). The organization of the human cerebral cortex estimated by intrinsic functional connectivity. *Journal of Neurophysiology*, 106(3), 1125–1165. https://doi.org/10.1152/jn.00338.2011
 
 Why this atlas?
-- Robust and validated across a large cohort
-- Clear, interpretable networks for education and demos
-- Balanced granularity (7-network) for clean UI and interaction
+- Validated on a large cohort and widely referenced in neuroimaging
+- Clear network labels for students and educators
+- Seven-network granularity keeps the UI clean while covering the full cortex
 
-How to use it in the app:
+How to explore it in the app:
 - Hover over the 3D brain to highlight the nearest network
-- Click to open details, functions, and resources
-- Use search to jump to a specific network
-- Drag to rotate, scroll to zoom
+- Click a network to open its description, key functions, and resource links
+- Use search to jump directly to a network name
+- Drag to orbit the brain, scroll or pinch to zoom
 
 ## Visual overview
 

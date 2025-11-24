@@ -1,6 +1,6 @@
 /**
  * ========================================================================
- * THE 7-NETWORK BRAIN (Yeo et al., 2011)
+ * SEVEN FUNCTIONAL BRAIN NETWORKS
  * ========================================================================
  *
  * This structure defines the 7 functional networks of the brain.
@@ -20,18 +20,21 @@ export const brainStructure = {
     id: 'visual_network',
     name: 'Visual Network (VIS)',
     type: 'REGION',
-    description: 'Located at the back of the brain (occipital lobe). Responsible for vision, motion detection, color, and shape processing.',
+    description: 'Occupies primary and secondary occipital cortex (V1-V4) plus the ventral visual stream. Transforms retinal input into detailed maps of edges, color, motion, and depth that guide perception and action.',
     color: '#8E44AD', // Purple/Violet
     position: [0, 0.2, -1.8], // Back
     size: [2.5, 2, 1.5],
     isMainRegion: true,
     parts: [],
+    anatomicalLocation: 'Posterior occipital cortex, calcarine sulcus, lingual and fusiform gyri',
+    keyRegions: ['Primary Visual Cortex (V1)', 'Extrastriate Cortex (V2-V4)', 'Middle Temporal Area (MT/V5)', 'Fusiform Face Area'],
+    clinicalRelevance: 'Damage can cause visual field defects, motion blindness, or prosopagnosia (face blindness). Occipital lobe lesions impair conscious vision.',
     functions: [
-      'Primary visual processing',
-      'Motion detection',
-      'Color and shape recognition',
-      'Depth perception',
-      'Visual attention'
+      'Encodes edges, contrast, and orientation in early visual cortex (V1/V2)',
+      'Detects motion speed and direction for navigation (MT/V5)',
+      'Processes color, faces, and complex shapes along the ventral stream',
+      'Maintains visual field maps that support eye-hand coordination',
+      'Supports visual imagery when recalling scenes or planning movements'
     ]
   },
 
@@ -42,18 +45,21 @@ export const brainStructure = {
     id: 'somatomotor_network',
     name: 'Somatomotor Network (SMN)',
     type: 'REGION',
-    description: 'Runs in an arc along the top-middle of the brain (precentral & postcentral gyri). Controls movement, touch, and body sensation.',
+    description: 'Forms a horseshoe along the precentral (motor) and postcentral (somatosensory) gyri. Integrates muscle commands with touch and proprioceptive feedback to keep the body coordinated.',
     color: '#3498DB', // Blue
     position: [0, 1.9, 0.2], // Top Arc
     size: [3, 1.5, 1.5],
     isMainRegion: true,
     parts: [],
+    anatomicalLocation: 'Precentral gyrus (motor cortex), postcentral gyrus (somatosensory cortex), paracentral lobule',
+    keyRegions: ['Primary Motor Cortex (M1)', 'Primary Somatosensory Cortex (S1)', 'Supplementary Motor Area', 'Premotor Cortex'],
+    clinicalRelevance: 'Strokes here cause contralateral weakness or paralysis. Seizures can trigger involuntary movements. Essential for rehabilitation after motor injuries.',
     functions: [
-      'Voluntary movement control',
-      'Touch sensation processing',
-      'Proprioception (body position)',
-      'Motor planning',
-      'Tactile discrimination'
+      'Drives voluntary limb, face, and speech movements from primary motor cortex',
+      'Maps tactile input from the skin to the primary somatosensory cortex homunculus',
+      'Combines proprioception with motor plans to maintain posture and gait',
+      'Supports fine hand control and tool use through premotor areas',
+      'Links rehearsed movements to cerebellar timing for smooth execution'
     ]
   },
 
@@ -64,18 +70,21 @@ export const brainStructure = {
     id: 'dorsal_attention_network',
     name: 'Dorsal Attention Network (DAN)',
     type: 'REGION',
-    description: 'Involves superior parietal and frontal eye fields. Responsible for goal-directed attention and focusing on targets.',
+    description: 'Links the superior parietal lobule, intraparietal sulcus, and frontal eye fields. Keeps attention anchored on task-relevant objects and steers the eyes and hands toward them.',
     color: '#2ECC71', // Green
     position: [1.2, 1.6, -0.5], // Top-Back-Side (Lateralized for interaction)
     size: [1.5, 1.5, 1.5],
     isMainRegion: true,
     parts: [],
+    anatomicalLocation: 'Superior parietal lobule, intraparietal sulcus, frontal eye fields (dorsal premotor cortex)',
+    keyRegions: ['Frontal Eye Fields (FEF)', 'Intraparietal Sulcus (IPS)', 'Superior Parietal Lobule (SPL)'],
+    clinicalRelevance: 'Damage causes spatial neglect (ignoring one side of space) or difficulty with goal-directed eye movements. Critical for attention in ADHD research.',
     functions: [
-      'Goal-directed attention',
-      'Top-down attentional control',
-      'Spatial orientation',
-      'Eye movement control',
-      'Focusing on specific objects'
+      'Builds top-down \"priority maps\" for visual search and reading',
+      'Plans saccades and coordinated reaches toward selected targets',
+      'Shifts covert attention across the visual field without moving the eyes',
+      'Stabilises visuospatial working memory during math, coding, or drawing',
+      'Suppresses distractions so goal-relevant sensory input is amplified'
     ]
   },
 
@@ -86,18 +95,21 @@ export const brainStructure = {
     id: 'ventral_attention_network',
     name: 'Ventral Attention / Salience (VAN)',
     type: 'REGION',
-    description: 'Centered on the insula and anterior cingulate. Detects salient events, errors, and threats. Acts as a "switch" between networks.',
+    description: 'Anchored in the anterior insula and dorsal anterior cingulate. Monitors the body and environment for salient, urgent changes and rapidly reallocates attention when something important happens.',
     color: '#E67E22', // Orange
     position: [1.2, 0.5, 1.0], // Front-Side (Insula area)
     size: [1.5, 1.5, 1.5],
     isMainRegion: true,
     parts: [],
+    anatomicalLocation: 'Anterior insula, dorsal anterior cingulate cortex (dACC), inferior frontal gyrus',
+    keyRegions: ['Anterior Insula', 'Dorsal Anterior Cingulate Cortex', 'Supramarginal Gyrus', 'Temporoparietal Junction'],
+    clinicalRelevance: 'Implicated in anxiety disorders, PTSD, and chronic pain. Hyperactivity linked to panic attacks; hypoactivity seen in alexithymia (difficulty identifying emotions).',
     functions: [
-      'Salience detection (what is important)',
-      'Error detection',
-      'Threat monitoring',
-      'Switching between DMN and CEN',
-      'Interoception (internal body states)'
+      'Detects novel sights, sounds, or feelings that demand immediate attention',
+      'Generates prediction-error signals when performance slips or surprises occur',
+      'Tracks interoceptive cues such as heart rate and gut feelings',
+      'Triggers switches between inward-focused (DMN) and task-focused (FPN/DAN) states',
+      'Supports empathy by tagging emotionally charged social cues'
     ]
   },
 
@@ -108,18 +120,21 @@ export const brainStructure = {
     id: 'limbic_network',
     name: 'Limbic Network (LIM)',
     type: 'REGION',
-    description: 'Includes orbitofrontal cortex and temporal pole. Crucial for emotional regulation and memory associations.',
+    description: 'Covers the orbitofrontal cortex, temporal pole, and ventral medial prefrontal areas that interface with the amygdala and hippocampus. Assigns emotional and motivational value to experiences.',
     color: '#F1C40F', // Warm Yellow/Cream
     position: [0, -0.5, 0.5], // Deep/Bottom Front
     size: [1.5, 1.2, 1.5],
     isMainRegion: true,
     parts: [],
+    anatomicalLocation: 'Orbitofrontal cortex, temporal pole, ventromedial prefrontal cortex, anterior cingulate (subgenual)',
+    keyRegions: ['Orbitofrontal Cortex (OFC)', 'Temporal Pole', 'Ventromedial Prefrontal Cortex', 'Subgenual Cingulate'],
+    clinicalRelevance: 'Dysfunction linked to depression, addiction, and impulsive decision-making. OFC damage impairs social judgement and emotional regulation.',
     functions: [
-      'Emotional regulation',
-      'Memory association',
-      'Motivation and reward',
-      'Olfactory processing',
-      'Social behavior'
+      'Pairs sights, sounds, and smells with emotional memories',
+      'Evaluates rewards and punishments to guide future choices',
+      'Supports mood regulation and stress buffering',
+      'Links olfactory and gustatory cues to appetite and satiety',
+      'Interprets social cues such as tone of voice or facial expression'
     ]
   },
 
@@ -130,19 +145,21 @@ export const brainStructure = {
     id: 'frontoparietal_network',
     name: 'Frontoparietal Control (FPN)',
     type: 'REGION',
-    description: 'Spans middle frontal gyrus and inferior parietal lobule. Responsible for executive function, planning, and fluid intelligence.',
+    description: 'Links the dorsolateral prefrontal cortex with inferior parietal regions. Acts as a flexible control hub that keeps goals online, tests strategies, and supervises complex behaviour.',
     color: '#9B59B6', // Deep Purple/Blue
     position: [1.4, 1.2, 1.2], // Front-Side (DLPFC area)
     size: [1.8, 1.5, 1.5],
     isMainRegion: true,
     parts: [],
+    anatomicalLocation: 'Dorsolateral prefrontal cortex (DLPFC), inferior parietal lobule, middle frontal gyrus',
+    keyRegions: ['Dorsolateral Prefrontal Cortex', 'Inferior Parietal Lobule', 'Lateral Premotor Cortex', 'Anterior PFC'],
+    clinicalRelevance: 'Impaired in schizophrenia, ADHD, and frontotemporal dementia. Critical target for cognitive training and brain stimulation therapies.',
     functions: [
-      'Executive function',
-      'Complex planning',
-      'Problem solving',
-      'Fluid intelligence',
-      'Working memory',
-      'Cognitive flexibility'
+      'Holds task rules and instructions in working memory',
+      'Designs step-by-step plans for writing, coding, or lab work',
+      'Evaluates evidence and updates strategies when conditions change',
+      'Balances speed versus accuracy depending on goals',
+      'Coordinates with DAN and SMN to translate decisions into action'
     ]
   },
 
@@ -153,24 +170,27 @@ export const brainStructure = {
     id: 'default_mode_network',
     name: 'Default Mode Network (DMN)',
     type: 'REGION',
-    description: 'Includes medial prefrontal cortex, posterior cingulate, and precuneus. Active during mind-wandering, self-reflection, and autobiographical thinking.',
+    description: 'Spans medial prefrontal cortex, posterior cingulate/precuneus, angular gyrus, and hippocampal formation. Dominates during quiet wakefulness when we replay memories or imagine the future.',
     color: '#E74C3C', // Red/Pink
     position: [0, 1.0, 1.8], // Front-Midline (mPFC)
     size: [2.0, 2.0, 2.0],
     isMainRegion: true,
     parts: [],
+    anatomicalLocation: 'Medial prefrontal cortex, posterior cingulate cortex, precuneus, angular gyrus, medial temporal lobe',
+    keyRegions: ['Medial Prefrontal Cortex (mPFC)', 'Posterior Cingulate Cortex (PCC)', 'Precuneus', 'Angular Gyrus'],
+    clinicalRelevance: 'Overactivity linked to depression and rumination. Disrupted in Alzheimer\'s disease. Reduced connectivity seen in autism spectrum disorders.',
     functions: [
-      'Self-referential thought',
-      'Mind-wandering',
-      'Autobiographical memory',
-      'Thinking about the future',
-      'Social cognition (Theory of Mind)'
+      'Retrieves autobiographical and episodic memories',
+      'Simulates future plans and \"what if\" scenarios',
+      'Supports self-reflection and moral reasoning',
+      'Integrates bodily state signals during rest or meditation',
+      'Enables theory-of-mind thinking about other people\'s perspectives'
     ]
   }
 };
 
 /**
- * Get all main REGIONS (6 total)
+ * Get all main REGIONS (7 total)
  */
 export const getMainRegions = () => {
   return Object.values(brainStructure).filter(region => region.type === 'REGION');

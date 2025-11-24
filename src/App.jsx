@@ -306,10 +306,37 @@ function App() {
                   {selectedRegion.type}
                 </div>
                 <h2 className="info-title">{selectedRegion.name}</h2>
+              </div>
+
+              {/* Overview Section */}
+              <div className="info-section">
+                <h3 className="info-section-title">Overview</h3>
                 <p className="info-description">{selectedRegion.description}</p>
               </div>
 
-              {/* Functions */}
+              {/* Anatomical Location */}
+              {selectedRegion.anatomicalLocation && (
+                <div className="info-section">
+                  <h3 className="info-section-title">Anatomical Location</h3>
+                  <p className="info-text">{selectedRegion.anatomicalLocation}</p>
+                </div>
+              )}
+
+              {/* Key Regions */}
+              {selectedRegion.keyRegions && selectedRegion.keyRegions.length > 0 && (
+                <div className="info-section">
+                  <h3 className="info-section-title">Key Regions</h3>
+                  <div className="info-tags">
+                    {selectedRegion.keyRegions.map((region, idx) => (
+                      <span key={idx} className="info-tag" style={{ borderColor: selectedRegion.color }}>
+                        {region}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Key Functions */}
               {selectedRegion.functions && selectedRegion.functions.length > 0 && (
                 <div className="info-section">
                   <h3 className="info-section-title">Key Functions</h3>
@@ -324,16 +351,11 @@ function App() {
                 </div>
               )}
 
-              {/* Region Info Notice */}
-              {selectedRegion.type === 'REGION' && (
-                <div className="info-notice" style={{ borderColor: selectedRegion.color }}>
-                  <div className="info-notice-title" style={{ color: selectedRegion.color }}>
-                    Yeo 7-Network Atlas Context
-                  </div>
-                  <p>
-                    This network is part of the Yeo et al. (2011) intrinsic functional atlas,
-                    summarising large-scale connectivity patterns found across 1,000 resting-state fMRI scans.
-                  </p>
+              {/* Clinical Relevance */}
+              {selectedRegion.clinicalRelevance && (
+                <div className="info-section info-section-clinical">
+                  <h3 className="info-section-title">Clinical Relevance</h3>
+                  <p className="info-text info-clinical-text">{selectedRegion.clinicalRelevance}</p>
                 </div>
               )}
 
@@ -367,29 +389,6 @@ function App() {
                 )}
               </div>
 
-              {/* Atlas Info */}
-              <div className="info-section">
-                <h3 className="info-section-title">Atlas</h3>
-                <p className="info-description">
-                  This viewer uses the 7-Network atlas from Yeo et al. (2011),
-                  derived from resting-state fMRI on 1,000 subjects to estimate
-                  intrinsic functional connectivity across cortex. It provides a
-                  robust, widely adopted parcellation for educational and
-                  exploratory visualisation.
-                </p>
-                <p className="info-description" style={{ marginTop: 8 }}>
-                  Citation: Yeo, B.T.T., Krienen, F.M., Sepulcre, J., Sabuncu,
-                  M.R., Lashkari, D., Hollinshead, M., … Buckner, R.L. (2011).
-                  The organization of the human cerebral cortex estimated by
-                  intrinsic functional connectivity. Journal of Neurophysiology,
-                  106(3), 1125–1165. DOI: <a href="https://doi.org/10.1152/jn.00338.2011" target="_blank" rel="noopener noreferrer">10.1152/jn.00338.2011</a>
-                </p>
-                <p className="info-description" style={{ marginTop: 8 }}>
-                  How to use: Hover to highlight the nearest network; click to
-                  open details and resources. Use the search to jump to a
-                  network. Rotate and zoom to inspect different views.
-                </p>
-              </div>
             </>
           ) : (
             <div className="info-welcome">
@@ -413,33 +412,18 @@ function App() {
                 </ul>
               </div>
 
-              <div className="info-section" style={{ marginTop: '24px' }}>
-                <h3 className="info-section-title">Atlas</h3>
-                <p className="info-description">
-                  Using the 7-Network atlas from Yeo et al. (2011), based on
-                  resting-state fMRI of 1,000 subjects. It balances simplicity
-                  with biological validity for interactive exploration.
-                </p>
-                <p className="info-description" style={{ marginTop: 8 }}>
-                  Citation: Yeo, B.T.T., Krienen, F.M., Sepulcre, J., Sabuncu,
-                  M.R., Lashkari, D., Hollinshead, M., … Buckner, R.L. (2011).
-                  The organization of the human cerebral cortex estimated by
-                  intrinsic functional connectivity. J Neurophysiol 106(3):
-                  1125–1165. <a href="https://doi.org/10.1152/jn.00338.2011" target="_blank" rel="noopener noreferrer">https://doi.org/10.1152/jn.00338.2011</a>
-                </p>
-              </div>
             </div>
           )}
         </div>
       </div>
 
-      {/* Background Overlay when drawer is open */}
-      {isInfoPanelOpen && (
+      {/* Background Overlay when drawer is open - REMOVED to keep brain visible */}
+      {/* {isInfoPanelOpen && (
         <div
           className="drawer-overlay"
           onClick={() => setIsInfoPanelOpen(false)}
         ></div>
-      )}
+      )} */}
     </div>
   );
 }
